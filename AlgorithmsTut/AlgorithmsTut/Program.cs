@@ -1,4 +1,5 @@
 ﻿using AlgorithmsTut.SearchingAlgos;
+using AlgorithmsTut.SortingAlgos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,26 @@ namespace AlgorithmsTut
 {
     class Program
     {
+        public static int[] arr = new int[]{
+            9,8,7,6,5,4,3,2,1
+            };
         static void Main(string[] args)
         {
-            Console.WriteLine("Binary Search");
-            Console.WriteLine("search for 7 number");
-            CallBinaryRecursiveSearch(7);
-            Console.WriteLine("search for 10 number");
-            CallBinaryRecursiveSearch(10);
+            //Console.WriteLine("Binary Search");
+            //Console.WriteLine("search for 7 number");
+            //CallBinaryRecursiveSearch(7);
+            //Console.WriteLine("search for 10 number");
+            //CallBinaryRecursiveSearch(10);
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+
             Console.WriteLine($"/////////////////////////////////////////////////////////");
+            Console.WriteLine("Sorting Algos");
+            Console.WriteLine("Selection Sort");
+            CallSelectionSort();
+            Console.WriteLine($"/////////////////////////////////////////////////////////");
+
+
+
             Console.ReadKey();
 
         }
@@ -40,6 +53,27 @@ namespace AlgorithmsTut
                 Console.WriteLine("element not in the array");
             }
 
+        }
+        public static void CallSelectionSort()
+        {
+            Console.WriteLine("Input arr");
+
+            var selSort = new SelectionSort();
+            var arr = Program.arr;
+            DispayArr(arr);
+            var outputArr = selSort.SelectionSortMethod(arr);
+            Console.WriteLine("Selection Sort  sorted array");
+            DispayArr(outputArr);
+
+
+        }
+
+        public static void DispayArr(int [] arr) {
+            foreach(var item in arr)
+            {
+                Console.Write(item + " - >");
+            }
+            Console.WriteLine(" Done ");
         }
     }
 }
