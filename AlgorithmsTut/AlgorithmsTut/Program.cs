@@ -11,7 +11,7 @@ namespace AlgorithmsTut
     class Program
     {
         public static int[] arr = new int[]{
-            9,8,7,6,5,4,3,2,1
+            9,8,7
             };
         static void Main(string[] args)
         {
@@ -22,10 +22,15 @@ namespace AlgorithmsTut
             //CallBinaryRecursiveSearch(10);
             //Console.WriteLine($"/////////////////////////////////////////////////////////");
 
+            //Console.WriteLine("Sorting Algos");
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine("Selection Sort");
+            //CallSelectionSort();
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+
             Console.WriteLine($"/////////////////////////////////////////////////////////");
-            Console.WriteLine("Sorting Algos");
-            Console.WriteLine("Selection Sort");
-            CallSelectionSort();
+            Console.WriteLine("Insertion Sort");
+            CallInsertionSort();
             Console.WriteLine($"/////////////////////////////////////////////////////////");
 
 
@@ -63,6 +68,20 @@ namespace AlgorithmsTut
             DispayArr(arr);
             var outputArr = selSort.SelectionSortMethod(arr);
             Console.WriteLine("Selection Sort  sorted array");
+            DispayArr(outputArr);
+
+
+        }
+
+        public static void CallInsertionSort()
+        {
+            Console.WriteLine("Input arr");
+
+            var insSort = new InsertionSort();
+            var arr = Program.arr;
+            DispayArr(arr);
+            var outputArr = insSort.InsertionSortMethod(arr);
+            Console.WriteLine("Insertion Sort  sorted array");
             DispayArr(outputArr);
 
 
