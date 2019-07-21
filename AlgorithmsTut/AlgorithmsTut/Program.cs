@@ -11,8 +11,7 @@ namespace AlgorithmsTut
     class Program
     {
         public static int[] arr = new int[]{
-            9,8,7
-            };
+            9,8,7,6,5,4            };
         static void Main(string[] args)
         {
             //Console.WriteLine("Binary Search");
@@ -28,9 +27,29 @@ namespace AlgorithmsTut
             //CallSelectionSort();
             //Console.WriteLine($"/////////////////////////////////////////////////////////");
 
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine("Insertion Sort");
+            //CallInsertionSort();
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+
+
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine("Merge Sort");
+            //CallMergeSort();
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine("Quick Sort");
+            //CallQuickSort();
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+            //Console.WriteLine("Heap Sort");
+            //CallHeapSort();
+            //Console.WriteLine($"/////////////////////////////////////////////////////////");
+
             Console.WriteLine($"/////////////////////////////////////////////////////////");
-            Console.WriteLine("Insertion Sort");
-            CallInsertionSort();
+            Console.WriteLine("Radix Sort");
+            CallRadixSort();
             Console.WriteLine($"/////////////////////////////////////////////////////////");
 
 
@@ -48,7 +67,7 @@ namespace AlgorithmsTut
             };
             var binarySearch = new BinarySearch();
             var mid = inputArray.Length / 2;
-            var index = binarySearch.RecursiveBinarySearch(inputArray, 0,  inputArray.Length - 1, val);
+            var index = binarySearch.RecursiveBinarySearch(inputArray, 0, inputArray.Length - 1, val);
             if (index > -1)
             {
                 Console.WriteLine("value is at position : " + (index + 1));
@@ -87,8 +106,45 @@ namespace AlgorithmsTut
 
         }
 
-        public static void DispayArr(int [] arr) {
-            foreach(var item in arr)
+        public static void CallMergeSort()
+        {
+            var mergeSort = new MergeSort();
+            var arr = Program.arr;
+            DispayArr(arr);
+            mergeSort.Sort(arr, 0, arr.Length - 1);
+            DispayArr(arr);
+        }
+
+        public static void CallQuickSort()
+        {
+            var quickSort = new QuickSort();
+            var arr = Program.arr;
+            DispayArr(arr);
+            quickSort.Sort(arr, 0, arr.Length - 1);
+            DispayArr(arr);
+        }
+
+        public static void CallHeapSort()
+        {
+            var heapSort = new HeapSort();
+            var arr = Program.arr;
+            DispayArr(arr);
+            heapSort.Sort(arr);
+            DispayArr(arr);
+
+        }
+
+        public static void CallRadixSort()
+        {
+            var arr = Program.arr;
+            DispayArr(arr);
+            RadixSort.CallRadixsort(arr, arr.Length);
+            DispayArr(arr);
+        }
+
+        public static void DispayArr(int[] arr)
+        {
+            foreach (var item in arr)
             {
                 Console.Write(item + " - >");
             }

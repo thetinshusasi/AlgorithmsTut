@@ -45,7 +45,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchingAlgos\BinarySearch.cs" />
+    <Compile Include="SortingAlgos\HeapSort.cs" />
     <Compile Include="SortingAlgos\InsertionSort.cs" />
+    <Compile Include="SortingAlgos\MergeSort.cs" />
+    <Compile Include="SortingAlgos\QuickSort.cs" />
+    <Compile Include="SortingAlgos\RadixSort.cs" />
     <Compile Include="SortingAlgos\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
